@@ -1,0 +1,19 @@
+//grabs hands...
+
+allCombos = function(arr)
+{
+  var totalResult = [];
+  var oneHand = [];
+  if (arr.length <= 4)
+    return totalResult;
+  for(i=0;i<arr.length;i++)
+  {
+    for(j=0;j<arr.length;j++)
+    {
+    oneHand = allCombos(arr.slice(i,j));
+    if(oneHand.length == 5)
+      totalResult.push(oneHand);
+    }
+  }
+return totalResult;
+}
